@@ -1,0 +1,8 @@
+pypiwin32
+scrapy
+twisted
+pymongo
+pymysql
+Pillow
+lxml
+selenium
