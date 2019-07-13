@@ -13,14 +13,15 @@ from mmscrapy.items.NovelItem import NovelItem
 class NovelSpiders(Spider):
     base_url = "https://www.qidian.com"
     name = "novel_spider"
-    custom_settings = {"ITEM_PIPELINES": {
-        'mmscrapy.pipelines.ConsolePipeline.ConsolePipeline': 300
-    }
+    custom_settings = {
+        "ITEM_PIPELINES": {
+            'mmscrapy.pipelines.ConsolePipeline.ConsolePipeline': 300
+        }
     }
 
     def __init__(self, *args, **kwargs):
         super(NovelSpiders, self).__init__(*args, **kwargs)
-        category = kwargs.get("category", "")
+        category = kwargs.get("category", "finish")
 
         self.start_urls = ['{0}/{1}'.format(self.base_url, category)]
 

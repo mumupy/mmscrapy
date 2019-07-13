@@ -4,3 +4,12 @@
 # @Author  : ganliang
 # @File    : setup.py.py
 # @Desc    : 安装包
+
+from setuptools import setup, find_packages
+
+setup(
+    name='mmscrapy',
+    version='1.0',
+    packages=find_packages(),
+    entry_points={'scrapy': ['settings = mmscrapy.settings']}
+)

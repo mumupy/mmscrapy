@@ -6,3 +6,6 @@ pymysql
 Pillow
 lxml
 selenium
+scrapyd
+scrapyd-client
+spiderkeeper

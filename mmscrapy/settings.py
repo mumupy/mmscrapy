@@ -66,8 +66,8 @@ SPIDER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'mmscrapy.middlewares.MmscrapyDownloaderMiddleware': 543,
-    'mmscrapy.middleware.RandomUserAgent.RandomUserAgent': 540,
-    'mmscrapy.middleware.ProxyMiddleware.ProxyMiddleware': 541,
+    # 'mmscrapy.middleware.RandomUserAgent.RandomUserAgent': 540,
+    # 'mmscrapy.middleware.ProxyMiddleware.ProxyMiddleware': 541,
 }
 
 # Enable or disable extensions

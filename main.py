@@ -7,9 +7,8 @@
 import os
 import sys
 
-
 def start_nodel_spider():
-    os.system("scrapy crawl novel_spider -a category=finish -a cate=1234 -o novel1.json")
+    os.system("scrapy crawl novel_spider -a category=finish -o novel1.json")
 
 
 def start_image_spider():
@@ -50,7 +49,7 @@ def start_xicidaili_proxy_spider():
 if __name__ == "__main__":
     args = sys.argv[1:]
 
-    args.append("xicidaili")
+    args.append("nodel")
 
     if len(args) < 1:
         print ("usage [python main.py cnvd|xiaohuar|author ]")
