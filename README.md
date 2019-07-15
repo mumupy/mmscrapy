@@ -1,14 +1,30 @@
-# mmscrapy
-scrapy框架搭建的爬虫项目，在这个项目里面有自己创建的spider。
+# mmscrapy爬虫
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/mumupy/mmscrapy/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/mumupy/mmscrapy.svg?branch=master)](https://travis-ci.org/mumupy/mmscrapy)
+[![codecov](https://codecov.io/gh/mumupy/mmscrapy/branch/master/graph/badge.svg)](https://codecov.io/gh/mumupy/mmscrapy)
+[![pypi](https://img.shields.io/pypi/v/mmscrapy.svg)](https://pypi.python.org/pypi/mmscrapy)
+[![Documentation Status](https://readthedocs.org/projects/mmscrapy/badge/?version=latest)](https://mmscrapy.readthedocs.io/en/latest/?badge=latest)
+
+***mmscrapy爬虫程序是使用scrapy框架搭建的爬虫项目，编写这个项目主要有如下三个目的***
+- 通过编写爬虫程序了解scrapy的使用方式和学习scrapy的使用技巧。
+- 编写自己的爬虫程序，由于自身业务需求需要爬取一些网站信息。原来使用java框架编写，但是性能不够好，所以想要使用scrapy来编写。
+- 分布式爬虫功能支持，scrapy支持很多特性，不必要自己创轮子。
+
 
 ## mmscrapy爬虫程序
+***scrapy爬虫程序是由crawler engine、downloader、pipeline、schedule、spider五个重要组件组成。***
+- spider 用户编写模块，在该模块中对页面进行分析，将分析的结果存储和找到新的页面添加到爬虫引擎中。
+- crawler engine 爬虫引擎，对url进行爬去
+- downloader 对页面进行下载
+- pipeline 对spider爬取得数据进行存储
+- schedule 对整个爬虫进行调度
 
 
-## 项目爬虫创建
+### 项目爬虫创建
 ``` 
 scrapy startproject project
 ```
-## 爬虫执行
+### 爬虫执行
 ```
 scrapy crawl novel_spider -o novel.csv
 

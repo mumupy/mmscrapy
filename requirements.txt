@@ -10,3 +10,10 @@ scrapyd
 scrapyd-client
 spiderkeeper
 scrapy_splash
+pybloom
+codecov
+recommonmark
+sphinx
+sphinx-autobuild
+sphinx_rtd_theme
+tree

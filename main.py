@@ -55,6 +55,10 @@ def start_freebuf_loophole_spider():
     os.system("scrapy crawl freebuf_loophole_spider")
 
 
+def start_travis():
+    print ("travis success")
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
 
@@ -81,3 +85,5 @@ if __name__ == "__main__":
         start_xicidaili_proxy_spider()
     elif spider == "freebuf":
         start_freebuf_loophole_spider()
+    elif spider == "travis":
+        start_travis()
