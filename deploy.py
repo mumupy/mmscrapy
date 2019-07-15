@@ -8,7 +8,7 @@
 import os
 import sys
 from sys import argv
-
+import subprocess
 
 def scrapyd_deploy():
     """
@@ -16,13 +16,13 @@ def scrapyd_deploy():
     :return:
     """
     # 打包
-    os.system("scrapyd-deploy.cmd --build-egg mmscrapy.egg")
+    os.popen("scrapyd-deploy.cmd --build-egg mmscrapy.egg")
 
     # 启动服务
-    os.system("scrapyd")
+    os.popen("scrapyd")
 
     # 将本地的egg包添加到scrapyd
-    os.system("scrapyd-deploy.cmd -a -p mmscrapy")
+    os.popen("scrapyd-deploy.cmd -a -p mmscrapy")
 
 
 def spiderkeeper_deploy():
@@ -39,10 +39,9 @@ if __name__ == "__main__":
         print ("usage python deploy.py scrapyd|spiderkeeper")
         sys.exit(-1)
 
-    deploy_tool = args[1]
+    deploy_tool = args[0]
 
     if deploy_tool == "spiderkeeper":
-        scrapyd_deploy()
         spiderkeeper_deploy()
     elif deploy_tool == "scrapyd":
         scrapyd_deploy()

@@ -40,7 +40,6 @@ CONCURRENT_REQUESTS_PER_IP = 16
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = True
 COOKIES_DEBUG = True
-COOKIE_SELENIUM_URL = "http://www.cnvd.org.cn/flaw/show/CNVD-2017-27958"
 
 # Disable Telnet Console (enabled by default)
 TELNETCONSOLE_ENABLED = True
@@ -66,8 +65,6 @@ SPIDER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'mmscrapy.middlewares.MmscrapyDownloaderMiddleware': 543,
-    # 'mmscrapy.middleware.RandomUserAgent.RandomUserAgent': 540,
-    # 'mmscrapy.middleware.ProxyMiddleware.ProxyMiddleware': 541,
 }
 
 # Enable or disable extensions
@@ -78,10 +75,9 @@ EXTENSIONS = {
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#     'mmscrapy.pipelines.ConsolePipeline.ConsolePipeline': 300,
-#     'mmscrapy.pipelines.ImagePipeline.ImagePipeline': 301
-# }
+ITEM_PIPELINES = {
+    'mmscrapy.pipelines.ConsolePipeline.ConsolePipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -106,7 +102,7 @@ AUTOTHROTTLE_DEBUG = False
 
 # log
 LOG_ENABLED = True
-LOG_LEVEL = logging.INFO
+LOG_LEVEL = logging.DEBUG
 LOG_FORMAT = "%(asctime)s|%(process)d|%(thread)d|%(filename)s[%(funcName)s:%(lineno)d]|%(levelname)s|%(message)s"
 
 # filter

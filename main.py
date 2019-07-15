@@ -7,6 +7,7 @@
 import os
 import sys
 
+
 def start_nodel_spider():
     os.system("scrapy crawl novel_spider -a category=finish -o novel1.json")
 
@@ -46,10 +47,18 @@ def start_xicidaili_proxy_spider():
     os.system("scrapy crawl xicidaili_proxy_spider -a type=nn -s JSONFILE_BASEDIR=D:/data/mmscrapy/xicidaili")
 
 
+def start_freebuf_loophole_spider():
+    """
+    爬取freebuf漏洞
+    :return:
+    """
+    os.system("scrapy crawl freebuf_loophole_spider")
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
 
-    args.append("nodel")
+    args.append("freebuf")
 
     if len(args) < 1:
         print ("usage [python main.py cnvd|xiaohuar|author ]")
@@ -70,3 +79,5 @@ if __name__ == "__main__":
         start_cnvd_loophole_spider()
     elif spider == "xicidaili":
         start_xicidaili_proxy_spider()
+    elif spider == "freebuf":
+        start_freebuf_loophole_spider()

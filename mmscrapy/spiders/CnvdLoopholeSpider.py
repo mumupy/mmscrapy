@@ -19,10 +19,18 @@ class CnvdLoopholeSpider(Spider):
     name = "cnvd_loophole_spider"
     allowed_domains = ['cnvd.org.cn']
 
-    custom_settings = {"ITEM_PIPELINES": {
-        'mmscrapy.pipelines.ConsolePipeline.ConsolePipeline': 300,
-        'mmscrapy.pipelines.JsonFilePipeline.JsonFilePipeline': 302
-    }}
+    custom_settings = {
+        "ITEM_PIPELINES": {
+            'mmscrapy.pipelines.ConsolePipeline.ConsolePipeline': 300,
+            'mmscrapy.pipelines.JsonFilePipeline.JsonFilePipeline': 302
+        },
+        "COOKIE_SELENIUM_URL": "http://www.cnvd.org.cn/flaw/show/CNVD-2017-27958",
+        "DOWNLOADER_MIDDLEWARES": {
+            'mmscrapy.middlewares.MmscrapyDownloaderMiddleware': 543,
+            'mmscrapy.middleware.RandomUserAgent.RandomUserAgent': 540,
+            'mmscrapy.middleware.ProxyMiddleware.ProxyMiddleware': 541,
+        }
+    }
     logger = logging.getLogger(__name__)
     application_loophole_type = {
         "29": "WEB应用",

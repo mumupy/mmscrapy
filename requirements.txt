@@ -9,3 +9,4 @@ selenium
 scrapyd
 scrapyd-client
 spiderkeeper
+scrapy_splash
