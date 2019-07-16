@@ -9,11 +9,12 @@ import logging
 
 
 class ConsolePipeline(object):
-    ids = set()
     logger = logging.getLogger(__name__)
 
     def process_item(self, item, spider):
-        itemdict = dict(item.iteritems())
-        self.ids.add(itemdict.get("url"))
-        self.logger.info(json.dumps(itemdict, ensure_ascii=False))
+        try:
+            itemdict = dict(item.iteritems())
+            self.logger.info(json.dumps(itemdict))
+        except Exception as ex:
+            self.logger.error(ex)
         return item

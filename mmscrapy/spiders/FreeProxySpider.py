@@ -19,13 +19,13 @@ class FreeProxySpider(Spider):
         },
         "DOWNLOADER_MIDDLEWARES": {
             'mmscrapy.middlewares.MmscrapyDownloaderMiddleware': 543,
-            'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
-            'mmscrapy.middleware.ProxyMiddleware.ProxyMiddleware': 541,
+            # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
+            # 'mmscrapy.middleware.ProxyMiddleware.ProxyMiddleware': 541,
         }
     }
 
     def __init__(self, *args, **kwargs):
-        self.proxyType = kwargs.get("type", "nn,nn")
+        self.proxyType = kwargs.get("type", "nn,nt,wn,wt")
         self.base_url = "https://www.xicidaili.com/"
 
         self.base_urls = []

@@ -44,7 +44,7 @@ def start_xicidaili_proxy_spider():
     爬取cnvd漏洞
     :return:
     """
-    os.system("scrapy crawl xicidaili_proxy_spider -a type=nn -s JSONFILE_BASEDIR=D:/data/mmscrapy/xicidaili")
+    os.system("scrapy crawl xicidaili_proxy_spider -a type=nn,nt,wn,wt -s JSONFILE_BASEDIR=D:/data/mmscrapy/xicidaili")
 
 
 def start_freebuf_loophole_spider():
@@ -55,6 +55,14 @@ def start_freebuf_loophole_spider():
     os.system("scrapy crawl freebuf_loophole_spider")
 
 
+def start_nsfocus_loophole_spider():
+    """
+    爬取freebuf漏洞
+    :return:
+    """
+    os.system("scrapy crawl nsfocus_loophole_spider -s JSONFILE_BASEDIR=D:/data/mmscrapy/nsfocus")
+
+
 def start_travis():
     print ("travis success")
 
@@ -62,7 +70,7 @@ def start_travis():
 if __name__ == "__main__":
     args = sys.argv[1:]
 
-    args.append("freebuf")
+    args.append("nsfocus")
 
     if len(args) < 1:
         print ("usage [python main.py cnvd|xiaohuar|author ]")
@@ -85,5 +93,7 @@ if __name__ == "__main__":
         start_xicidaili_proxy_spider()
     elif spider == "freebuf":
         start_freebuf_loophole_spider()
+    elif spider == "nsfocus":
+        start_nsfocus_loophole_spider()
     elif spider == "travis":
         start_travis()
