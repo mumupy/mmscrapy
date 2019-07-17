@@ -13,7 +13,7 @@ class SinaNewsSpider(RedisSpider):
     """
     采用redis分布式爬虫爬取绿盟漏洞数据
     """
-    name = "news_loophole_spider"
+    name = "sinanews_loophole_spider"
     base_url = "http://hb.sina.com.cn/news/"
     allowed_domains = ["sina.com.cn"]
 

@@ -4,7 +4,6 @@
 [![codecov](https://codecov.io/gh/mumupy/mmscrapy/branch/master/graph/badge.svg)](https://codecov.io/gh/mumupy/mmscrapy)
 [![pypi](https://img.shields.io/pypi/v/mmscrapy.svg)](https://pypi.python.org/pypi/mmscrapy)
 [![Documentation Status](https://readthedocs.org/projects/mmscrapy/badge/?version=latest)](https://mmscrapy.readthedocs.io/en/latest/?badge=latest)
-
 ***mmscrapy爬虫程序是使用scrapy框架搭建的爬虫项目，编写这个项目主要有如下三个目的***
 - 通过编写爬虫程序了解scrapy的使用方式和学习scrapy的使用技巧。
 - 编写自己的爬虫程序，由于自身业务需求需要爬取一些网站信息。原来使用java框架编写，但是性能不够好，所以想要使用scrapy来编写。

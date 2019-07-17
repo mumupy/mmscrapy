@@ -3,7 +3,7 @@ language: python
 cache:
   directories:
     - "$HOME/.cache/pip"
-    - "$HOME/.pyenv"
+#    - "$HOME/.pyenv"
 
 python:
   - "2.7"
